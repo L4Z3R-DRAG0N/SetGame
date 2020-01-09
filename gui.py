@@ -1,5 +1,6 @@
 import tkinter as tk
 import generator
+import project_set_solver as pss
 
 def draw(root, card_set):
     # clear old
@@ -117,6 +118,10 @@ canvas.pack(side = "left")
 # generate card set
 card_set = generator.gen_set()
 draw(canvas, card_set)
+ans = pss.solve(card_set)
+print(card_set)
+print(ans)
+
 frame = tk.Frame()
 
 def refresh():
